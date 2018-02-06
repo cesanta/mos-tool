@@ -1,0 +1,23 @@
+#!/usr/bin/make -f
+
+export DH_GOPKG := cesanta.com/mos
+
+export GOPATH := $(CURDIR)/obj-$(DEB_HOST_GNU_TYPE)
+
+%:
+	@echo ACT $@ GO=$(GO) GOPATH=$(GOPATH) CWD=$(CURDIR)
+	dh $@ --buildsystem=golang --with=golang
+
+override_dh_auto_build:
+	@echo BUILD START GOPATH=$(GOPATH) CWD=$(CURDIR)
+	rm -rf $(GOPATH)/src
+	mkdir -p $(GOPATH)/src
+	ln -vs ../.. $(GOPATH)/src/cesanta.com
+	cd $(GOPATH)/src/cesanta.com/mos && PATH=$$PATH:$(GOPATH)/bin make build
+	@echo BUILD END
+
+override_dh_auto_test:
+	@true
+
+override_dh_auto_install:
+	@dh_install
