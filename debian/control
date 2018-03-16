@@ -2,7 +2,7 @@ Source: mos
 Section: devel
 Priority: optional
 Maintainer: Deomid Ryabkov <rojer@cesanta.com>
-Build-Depends: debhelper (>=9), dh-golang, golang-go, libftdi-dev, libusb-1.0-0-dev, pkg-config, python, python-git
+Build-Depends: debhelper (>=9), dh-golang, golang-go, libftdi-dev, libusb-1.0-0-dev, pkg-config, python, python-git, rsync
 Standards-Version: 3.9.7
 Homepage: https://mongoose-os.com/
 Vcs-Git: https://github.com/cesanta/mongoose-os
