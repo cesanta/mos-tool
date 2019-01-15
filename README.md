@@ -48,7 +48,7 @@ Minimal required Go version is 1.8.
 Go and other required tools can be installed on Ubuntu 16.10 as follows:
 
 ```bash
-sudo apt install golang-go build-essential python python-git libftdi-dev
+sudo apt install golang-go build-essential python python-git libftdi-dev libusb-1.0-0-dev
 ```
 
 Make sure you have `GOPATH` set, and `PATH` should contain `$GOPATH/bin`.
