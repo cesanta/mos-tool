@@ -34,6 +34,8 @@
       platform: stm32
       build_vars:
         BOARD: NUCLEO-F746ZG
+    - name: posix
+      platform: posix
 
 - location: git@github.com:cesanta/mos-libs.git/mongoose
   out:
