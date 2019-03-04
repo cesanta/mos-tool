@@ -4,6 +4,8 @@ export DH_GOPKG := cesanta.com/mos
 
 export GOPATH := $(CURDIR)/obj-$(DEB_HOST_GNU_TYPE)
 
+export GOCACHE = /tmp/go-cache
+
 %:
 	@echo ACT $@ GO=$(GO) GOPATH=$(GOPATH) CWD=$(CURDIR)
 	dh $@ --buildsystem=golang --with=golang
